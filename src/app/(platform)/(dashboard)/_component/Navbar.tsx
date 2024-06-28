@@ -1,13 +1,16 @@
 import Logo from "@/components/Logo"
 import { Button } from "@/components/ui/button"
 import { OrganizationSwitcher, UserButton } from "@clerk/nextjs"
+import { auth } from "@clerk/nextjs/server"
 import { Plus } from "lucide-react"
+import MobileSidebar from "./MobileSidebar"
 
 
 const Navbar = () => {
+    const {orgId} = auth();
   return (
       <nav className="fixed z-50 top-0 px-4 w-full h-14 border-b shadow-sm bg-white flex items-center">
-            {/* {Mobile Sidebar} */}
+            <MobileSidebar/>
         <div className="flex item-center gap-x-4">
              <div className="hidden md:flex">
                  <Logo/>
@@ -20,7 +23,7 @@ const Navbar = () => {
              </Button>
          </div>
          <div className="ml-auto flex item-center gap-x-2">
-            <OrganizationSwitcher hidePersonal afterCreateOrganizationUrl={"/organization/:id"} afterLeaveOrganizationUrl="/select-org" afterSelectOrganizationUrl={"/organization/:id"} appearance={{
+            <OrganizationSwitcher hidePersonal afterCreateOrganizationUrl={"/organisation/:id"} afterLeaveOrganizationUrl="/select-org" afterSelectOrganizationUrl={`/organisation/:id`} appearance={{
                 elements:{
                     rootBox:{
                         display:"flex",
