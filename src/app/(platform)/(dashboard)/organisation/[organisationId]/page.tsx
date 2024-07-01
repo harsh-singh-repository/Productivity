@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Organization = () => {
+const organisation = () => {
     return(
         <div>
             Organisation Page 
@@ -8,4 +8,4 @@ const Organization = () => {
     )
 }
 
-export default Organization;
+export default organisation;

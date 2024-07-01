@@ -9,7 +9,7 @@ import { Separator } from '@/components/ui/separator';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Accordion } from '@/components/ui/accordion';
 import Link from 'next/link';
-import NavItem, { Organization } from './NavItem';
+import NavItem, { organisation } from './NavItem';
 
 
 interface SidebarProps{
@@ -19,7 +19,7 @@ interface SidebarProps{
 const Sidebar = ({storageKey="t-sidebar-state"}:SidebarProps) => {
 
    const [expanded,setExpanded] =  useLocalStorage<Record<string,any>>(storageKey,{});
-   const {organization:activeOrganization,isLoaded:isLoadedOrg} = useOrganization();
+   const {organization:activeorganisation,isLoaded:isLoadedOrg} = useOrganization();
    const {userMemberships,isLoaded:isLoadedOrgList} = useOrganizationList({userMemberships:{
      infinite:true,
    }});
@@ -41,7 +41,15 @@ const Sidebar = ({storageKey="t-sidebar-state"}:SidebarProps) => {
    if(!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading){
     return(
       <>
-        <Skeleton/>
+        <div className='flex items-center justify-between mb-2'>
+          <Skeleton className='h-10 w-[50%]'/>
+          <Skeleton className='h-10 w-10'/>
+        </div>
+        <div className='space-y-2'>
+           <NavItem.Skeleton/>
+           <NavItem.Skeleton/>
+           <NavItem.Skeleton/>
+        </div>
       </>
     )
    }
@@ -63,7 +71,7 @@ const Sidebar = ({storageKey="t-sidebar-state"}:SidebarProps) => {
                 return(
                   <>
                     <p key={organization.id}>
-                        <NavItem key={organization.id} isActive={activeOrganization?.id === organization.id} isExpanded ={expanded[organization.id]} organization={organization as Organization} onExpand={onExpand}/>
+                        <NavItem key={organization.id} isActive={activeorganisation?.id === organization.id} isExpanded ={expanded[organization.id]} organisation={organization as organisation} onExpand={onExpand}/>
                     </p>
                   </>
                 )

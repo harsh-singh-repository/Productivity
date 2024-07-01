@@ -1,9 +1,9 @@
-import { OrganizationList } from "@clerk/nextjs";
+import { organisationList } from "@clerk/nextjs";
 
 export default function CreateOrganisationPage(){
     return(
         <div>
-             <OrganizationList hidePersonal afterSelectOrganizationUrl="/organisation/:id" afterCreateOrganizationUrl={"/organisation/:id"}/>
+             <organisationList hidePersonal afterSelectorganisationUrl="/organisation/:id" afterCreateorganisationUrl={"/organisation/:id"}/>
         </div>
     )
 } 
