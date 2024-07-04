@@ -23,7 +23,7 @@ const Navbar = () => {
              </Button>
          </div>
          <div className="ml-auto flex item-center gap-x-2">
-            <OrganizationSwitcher hidePersonal afterCreateOrganizationUrl={"/organisation/:id"} afterLeaveOrganizationUrl="/select-org" afterSelectOrganizationUrl={`/organisation/:id`} appearance={{
+            <OrganizationSwitcher hidePersonal afterCreateOrganizationUrl="/organisation/:id" afterLeaveOrganizationUrl="/select-org" afterSelectOrganizationUrl="/organisation/:id" appearance={{
                 elements:{
                     rootBox:{
                         display:"flex",

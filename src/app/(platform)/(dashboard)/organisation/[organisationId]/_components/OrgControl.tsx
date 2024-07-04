@@ -4,7 +4,7 @@ import { useOrganizationList } from "@clerk/nextjs";
 import { useParams } from "next/navigation";
 import { useEffect } from "react";
 
-const OrgControl = () => {
+export const OrgControl = () => {
     const params = useParams();
     const {setActive} = useOrganizationList();
 
@@ -12,14 +12,9 @@ const OrgControl = () => {
        if(!setActive)return;
 
        setActive({
-        organization: params.organisationId as string
+        organization : params.organisationId as string
        })
-    },[])
-  return (
-    <>
-      
-    </>
-  )
-}
+    },[setActive,params.organisationId]);
 
-export default OrgControl
+  return null;
+}

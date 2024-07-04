@@ -19,7 +19,7 @@ interface SidebarProps{
 const Sidebar = ({storageKey="t-sidebar-state"}:SidebarProps) => {
 
    const [expanded,setExpanded] =  useLocalStorage<Record<string,any>>(storageKey,{});
-   const {organization:activeorganisation,isLoaded:isLoadedOrg} = useOrganization();
+   const {organization:activeorganization,isLoaded:isLoadedOrg} = useOrganization();
    const {userMemberships,isLoaded:isLoadedOrgList} = useOrganizationList({userMemberships:{
      infinite:true,
    }});
@@ -71,7 +71,7 @@ const Sidebar = ({storageKey="t-sidebar-state"}:SidebarProps) => {
                 return(
                   <>
                     <p key={organization.id}>
-                        <NavItem key={organization.id} isActive={activeorganisation?.id === organization.id} isExpanded ={expanded[organization.id]} organisation={organization as organisation} onExpand={onExpand}/>
+                        <NavItem key={organization.id} isActive={activeorganization?.id === organization.id} isExpanded ={expanded[organization.id]} organisation={organization as organisation} onExpand={onExpand}/>
                     </p>
                   </>
                 )
