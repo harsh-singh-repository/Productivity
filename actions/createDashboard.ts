@@ -12,7 +12,7 @@ export type state = {
    message?: string | null
 }
 
-const  CreateBoard = z.object({
+export const CreateBoard = z.object({
     title: z.string().min(3,{
         message: "Minimum length of 3 letters is required."
     }),

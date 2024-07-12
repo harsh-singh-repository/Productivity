@@ -6,6 +6,7 @@ import { useFormStatus } from "react-dom";
 
 const DeleteBtn = () => {
     const {pending} = useFormStatus();
+    
   return (
       <div>
         <Button variant={"destructive"} size={"sm"} disabled={pending}>
