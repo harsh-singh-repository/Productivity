@@ -30,7 +30,7 @@ const NavItem = ({ isExpanded, isActive, organisation, onExpand }: NavItemProp) 
         {
             label: "Boards",
             icon: <Layout className="h-4 w-4 mr-2" />,
-            href: `/organisation/${organisation.id}/organisation`
+            href: `/organisation/${organisation.id}`
         },
         {
             label: "Activity",

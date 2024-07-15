@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cabin } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "../../config/site";
+import {Toaster} from "sonner"
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   icons:[
     {
       url:"/logo.svg",
-      href: "./lo go.svg"
+      href: "./logo.svg"
     }
   ]
 };
@@ -26,7 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cabin.className}>{children}</body>
+      <body className={cabin.className}>
+        <Toaster/>
+        {children}
+      </body>
     </html>
   );
 }

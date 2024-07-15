@@ -5,17 +5,25 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 datasource db {
-  provider          = "postgresql"
-  url               = env("DATABASE_URL")
-  directUrl         = env("DIRECT_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 generator client {
   provider = "prisma-client-js"
 }
 
+model board {
+  id               String   @id @default(uuid())
+  orgId            String
+  imageId          String
+  title            String
+  imageThumbUrl    String   @db.Text
+  imageFullUrl     String   @db.Text
+  imageUserName    String   @db.Text
+  imageLinkHtml    String   @db.Text
 
-model board{
-  id String @id @default(uuid())
-  title String
+  createdAt        DateTime @default(now())
+  upadatedAt       DateTime @updatedAt
 }
