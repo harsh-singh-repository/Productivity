@@ -15,15 +15,43 @@ generator client {
 }
 
 model board {
-  id               String   @id @default(uuid())
-  orgId            String
-  imageId          String
-  title            String
-  imageThumbUrl    String   @db.Text
-  imageFullUrl     String   @db.Text
-  imageUserName    String   @db.Text
-  imageLinkHtml    String   @db.Text
+  id            String @id @default(uuid())
+  orgId         String
+  imageId       String
+  title         String
+  imageThumbUrl String @db.Text
+  imageFullUrl  String @db.Text
+  imageUserName String @db.Text
+  imageLinkHtml String @db.Text
 
-  createdAt        DateTime @default(now())
-  upadatedAt       DateTime @updatedAt
+  lists List[]
+
+  createdAt  DateTime @default(now())
+  upadatedAt DateTime @updatedAt
+}
+
+model List {
+  id        String   @id @default(uuid())
+  title     String
+  order     Int
+  boardId   String
+  board     board    @relation(fields: [boardId], references: [id], onDelete: Cascade)
+  cards     Card[]
+  cretedAt  DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([boardId])
+}
+
+model Card {
+  id          String   @id @default(uuid())
+  title       String
+  order       Int
+  description String?  @db.Text
+  listId      String
+  list        List     @relation(fields: [listId], references: [id], onDelete: Cascade)
+  cretedAt    DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([listId])
 }
