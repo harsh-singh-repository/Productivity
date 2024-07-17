@@ -7,12 +7,14 @@ import { useEventListener } from "usehooks-ts";
 import { useAction } from "../../../../../../../hooks/use-action";
 import { updateList } from "../../../../../../../actions/update-list";
 import { toast } from "sonner";
+import { ListOptions } from "./ListOptions";
 
 interface ListHeaderProps {
   data: List;
+  onAddCard:()=>void;
 }
 
-export const ListHeader = ({ data }: ListHeaderProps) => {
+export const ListHeader = ({ data,onAddCard }: ListHeaderProps) => {
   const [title, setTitle] = useState(data.title);
   const [isEditing, setIsEditing] = useState(false);
 
@@ -94,7 +96,7 @@ export const ListHeader = ({ data }: ListHeaderProps) => {
           {title}
         </div>
       )}
-      <ListOption/>
+      <ListOptions data={data} onAddCard={onAddCard}/>
     </div>
   );
 };

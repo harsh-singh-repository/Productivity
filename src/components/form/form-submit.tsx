@@ -1,15 +1,16 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { useFormStatus } from "react-dom";
-import { Button } from "../ui/button";
 
-interface formSubmitProps {
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+
+interface FormSubmitProps {
   children: React.ReactNode;
   disabled?: boolean;
   className?: string;
   variant?:
-    | "Default"
+    | "default"
     | "destructive"
     | "outline"
     | "secondary"
@@ -22,21 +23,19 @@ export const FormSubmit = ({
   children,
   disabled,
   className,
-  variant,
-}: formSubmitProps) => {
+  variant = "primary",
+}: FormSubmitProps) => {
   const { pending } = useFormStatus();
 
   return (
-    <>
-      <Button
-        disabled={pending || disabled}
-        type="submit"
-        variant={"default"}
-        size="sm"
-        className={cn(className)}
-      >
-        {children}
-      </Button>
-    </>
+    <Button
+      disabled={pending || disabled}
+      type="submit"
+      variant="ghost"
+      size="sm"
+      className={cn(className)}
+    >
+      {children}
+    </Button>
   );
 };

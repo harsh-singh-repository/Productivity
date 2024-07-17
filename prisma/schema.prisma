@@ -24,7 +24,7 @@ model board {
   imageUserName String @db.Text
   imageLinkHtml String @db.Text
 
-  lists List[]
+  lists         List[]
 
   createdAt  DateTime @default(now())
   upadatedAt DateTime @updatedAt
