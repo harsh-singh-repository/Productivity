@@ -2,7 +2,7 @@ import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { ListContainer } from "./_component/ListContainer";
-import {List} from "@prisma/client"
+import {List} from "@prisma/client";
 
 interface BoardIdPageProps{
   params:{
@@ -22,7 +22,7 @@ const BoardIdPage = async({params}:BoardIdPageProps) =>{
           boardId:params.boardId,
           board:{
             orgId,
-          }
+          }   
         },
         include:{
           cards:{
