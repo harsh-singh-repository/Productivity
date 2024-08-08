@@ -29,7 +29,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cabin.className}>
         <Toaster/>
-        {children}
+           {children}
       </body>
     </html>
   );
