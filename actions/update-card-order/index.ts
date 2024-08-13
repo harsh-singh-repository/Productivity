@@ -37,7 +37,6 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         }
       }),
     )
-
     const updatedCard = await db.$transaction(transaction);
   } catch(error){
     return {

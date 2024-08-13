@@ -9,6 +9,8 @@ import { InputType, ReturnType } from "./types";
 import { DeleteCard } from "./schema";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { createAuditLog } from "@/lib/create-audit-log";
+import { ENTITY_TYPE } from "@prisma/client";
 
 
 const handler = async (data: InputType): Promise<ReturnType> => {
@@ -34,7 +36,14 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         }
       }
     }
-   })
+   });
+
+   await createAuditLog({
+    entityId: card.id,
+    entityTitle: card.title,
+    entityType:ENTITY_TYPE.CARD,
+    action:ACTION.CREATE
+  })
   } catch (error) {
     return {
       error: "Failed to Delete",
