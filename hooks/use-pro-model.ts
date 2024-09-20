@@ -2,7 +2,7 @@ import {create} from "zustand";
 
 type ProModelStore = {
     isOpen:boolean;
-    onOpen:(id:string)=>void;
+    onOpen:()=>void;
     onClose:()=>void;
 }
 
