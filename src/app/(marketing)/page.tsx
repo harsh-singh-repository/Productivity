@@ -4,12 +4,14 @@ import Link from 'next/link';
 import React from 'react'
 import localFont from "next/font/local";
 import { cn } from '@/lib/utils';
+import { auth } from '@clerk/nextjs/server';
 
 const headingFont = localFont({
    src: "../../../public/Fonts/CalSans-SemiBold.otf"
 })
 
 const  MarketingPage = () => {
+   const {userId,orgId} = auth();
   return (
        <div className="flex items-center justify-center flex-col text-black">
            <div className={cn("flex items-center justify-center flex-col", headingFont.className)}>
@@ -27,9 +29,17 @@ const  MarketingPage = () => {
            </div>
            
            <Button className='mt-6' size={"lg"} >
-              <Link href={"sign-up"}>
-                 Get Productify
-              </Link>
+        
+                  {userId ? (
+                      <Link href={`/organisation/${orgId}`}>
+                         DashBoard
+                      </Link>
+                  ):(
+                    <Link href={`/sign-in`}>
+                        Login
+                    </Link>
+                  )}
+
            </Button>
        </div>
   )
