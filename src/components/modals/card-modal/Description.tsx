@@ -110,7 +110,7 @@ export const Description = ({ data }: DescriptionProps) => {
   );
 };
 
-Description.Skeleton = () => {
+Description.Skeleton = (() => {
   return (
     <div className="flex items-start gap-x-3 w-full">
       <Skeleton className="h-6 w-6 bg-neutral-200" />
@@ -120,4 +120,8 @@ Description.Skeleton = () => {
       </div>
     </div>
   );
-};
+}) as React.FC;
+
+Description.Skeleton.displayName = 'Skeleton';
+
+
