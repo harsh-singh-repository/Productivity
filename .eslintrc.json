@@ -1,6 +1,9 @@
 {
   "extends": "next/core-web-vitals",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"],
   "rules": {
-    "react/display-name": "warn" // Change to "error" if needed
+    "react/display-name": "off",
+    "@next/next/no-page-custom-font": "off"
   }
 }
