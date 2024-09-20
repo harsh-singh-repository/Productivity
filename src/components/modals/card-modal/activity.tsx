@@ -21,7 +21,7 @@ export const Activity = ({items}:activityProps) =>{
                  <div className="mt-2 space-y-4">
                      {items.map((items)=>{
                         return(
-                            <ActivityItems data={items}/>
+                            <ActivityItems data={items} key={items.id}/>
                         )
                      })}
                  </div>
