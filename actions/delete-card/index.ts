@@ -10,7 +10,7 @@ import { DeleteCard } from "./schema";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { createAuditLog } from "@/lib/create-audit-log";
-import { ENTITY_TYPE } from "@prisma/client";
+import { ACTION, ENTITY_TYPE } from "@prisma/client";
 
 
 const handler = async (data: InputType): Promise<ReturnType> => {
