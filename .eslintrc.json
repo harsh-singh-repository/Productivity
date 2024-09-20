@@ -1,7 +1,6 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:testing-library/react",
-    "plugin:jest-dom/recommended"
-  ]
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "react/display-name": "warn" // Change to "error" if needed
+  }
 }

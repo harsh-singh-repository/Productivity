@@ -7,7 +7,7 @@ import { CardWithList } from "../../../../types";
 import { fetcher } from "@/lib/fetcher";
 import { Header } from "./Header";
 import { Description } from "./Description";
-import { Action } from "./action";
+import  Action  from "./action";
 import { auditLogs } from "@prisma/client";
 import { Activity } from "./activity";
 
