@@ -21,7 +21,7 @@ const  MarketingPage = () => {
               </div>
               <h1 className='text-3xl md:text-6xl text-center text-neutral-800 mb-6'>Prodctivity on its Edges.</h1>
               <div className="text-2xl md:text-6xl text-green-600 px-4 p-2 rounded-md">
-                 Get Started
+                 Productify
               </div>
            </div>
            <div className='text-sm md:text-xl text-neutral-400 mt-4 max-w-s md: max-w-2xl text-center mx-auto'>
@@ -29,7 +29,7 @@ const  MarketingPage = () => {
            </div>
            
            <Button className='mt-6' size={"lg"} >
-        
+           <Button>
                   {userId ? (
                       <Link href={`/organisation/${orgId}`}>
                          DashBoard
@@ -39,7 +39,7 @@ const  MarketingPage = () => {
                         Login
                     </Link>
                   )}
-
+              </Button>
            </Button>
        </div>
   )
