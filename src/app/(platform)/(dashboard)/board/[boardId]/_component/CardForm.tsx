@@ -18,7 +18,7 @@ interface CardFormProp {
   isEditing: boolean;
 }
 
-export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProp>(
+const CardForm = forwardRef<HTMLTextAreaElement, CardFormProp>(
   ({ listId, enableEditing, disableEditing, isEditing }: CardFormProp, ref) => {
     const params = useParams();
     const formRef = useRef<ElementRef<"form">>(null);
@@ -98,6 +98,6 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProp>(
   }
 );
 
-CardForm.displayName = 'CardForm'; // Add display name
+CardForm.displayName = 'CardForm';
 
 export default CardForm;

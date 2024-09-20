@@ -3,7 +3,7 @@
 import { ElementRef, useRef, useState } from "react";
 import { ListWithCard } from "../../../../../../../types";
 import { ListHeader } from "./ListHeader";
-import { CardForm } from "./CardForm";
+import CardForm  from "./CardForm";
 import { cn } from "@/lib/utils";
 
 import { CardItem } from "./CardItem";
