@@ -15,7 +15,7 @@ interface ActionProps {
   data: CardWithList;
 }
 
-export function Action({ data }: ActionProps){
+export const  Action = ({ data }: ActionProps)=>{
   const params = useParams();
 
   const cardModel = useCardModal();
@@ -89,7 +89,7 @@ export function Action({ data }: ActionProps){
   );
 };
 
-Action.Skeleton = (() => {
+Action.Skeleton = () => {
   return (
     <div className="space-y-2 mt-2">
       <Skeleton className="w-20 h-4 bg-neutral-200" />
@@ -97,6 +97,4 @@ Action.Skeleton = (() => {
       <Skeleton className="w-full h-8 bg-neutral-200" />
     </div>
   );
-}) as React.FC;
-
-Action.Skeleton.displayName = "Skeleton"
+}
