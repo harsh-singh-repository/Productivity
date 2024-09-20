@@ -97,3 +97,7 @@ export const CardForm = forwardRef<HTMLTextAreaElement, CardFormProp>(
     );
   }
 );
+
+CardForm.displayName = 'CardForm'; // Add display name
+
+export default CardForm;
