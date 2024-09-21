@@ -28,7 +28,7 @@ const  MarketingPage = () => {
               Collaborate, Manage Project and reach at the edge of productivity. Organize your projects effortlessly with our No 1. task management app. Collaborate, track progress, and stay productive all in one place!
            </div>
            <Button className='mt-6' size={"lg"} >
-           <Button>
+
                   {userId ? (
                       <Link href={`/organisation/${orgId}`}>
                          DashBoard
@@ -38,7 +38,7 @@ const  MarketingPage = () => {
                         Login
                     </Link>
                   )}
-              </Button>
+
            </Button>
        </div>
   )
