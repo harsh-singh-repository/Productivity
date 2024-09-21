@@ -25,9 +25,8 @@ const  MarketingPage = () => {
               </div>
            </div>
            <div className='text-sm md:text-xl text-neutral-400 mt-4 max-w-s md: max-w-2xl text-center mx-auto'>
-              Collaborate, Manage Project and reach at the edge of productivity. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus quidem possimus voluptatem ipsam eligendi? Impedit?
+              Collaborate, Manage Project and reach at the edge of productivity. Organize your projects effortlessly with our No 1. task management app. Collaborate, track progress, and stay productive all in one place!
            </div>
-           
            <Button className='mt-6' size={"lg"} >
            <Button>
                   {userId ? (
